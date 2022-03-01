@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.submissionfragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_submitFragment"
+            app:destination="@id/submitFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/submitFragment"
+        android:name="com.example.submissionfragment.SubmitFragment"
+        android:label="fragment_submit"
+        tools:layout="@layout/fragment_submit" >
+        <action
+            android:id="@+id/action_submitFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"/>
+        <argument
+            android:name="track"
+            app:argType="string" />
+        <argument
+            android:name="goals"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_submitFragment_to_homeFragment2"
+            app:destination="@+id/homeFragment"/>
+    </fragment>
+</navigation>
